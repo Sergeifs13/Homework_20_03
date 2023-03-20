@@ -1,6 +1,18 @@
 public class Rectangle implements Shape {
     double a, b;
-    double areaRectangle;
+   double areaRectangle;
+
+    public double getArea() {
+        return areaRectangle;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "areaRectangle=" + areaRectangle +
+                ", perimeterRectangle=" + perimeterRectangle +
+                '}';
+    }
 
     public Rectangle(double a, double b) {
         this.a = a;
@@ -12,13 +24,15 @@ public class Rectangle implements Shape {
     @Override
     public void area() {
         areaRectangle = a * b;
-        System.out.println("Area Rectangle :" + areaRectangle);
+
     }
 
     @Override
     public void perimeter() {
         perimeterRectangle = (a + b) * 2;
-        System.out.println("Perimeter Rectangle :" + perimeterRectangle);
 
+    }
+    public double compareTo(Shape s) {
+        return getArea() - s.getArea();
     }
 }

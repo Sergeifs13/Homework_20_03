@@ -3,6 +3,18 @@ public class Triangle implements Shape{
     double areaTriangle;
     double perimeterTriangle;
 
+    public double getArea() {
+        return areaTriangle;
+    }
+
+    @Override
+    public String toString() {
+        return "\n Triangle{" +
+                "areaTriangle=" + areaTriangle +
+                ", perimeterTriangle=" + perimeterTriangle +
+                '}';
+    }
+
     public Triangle(double a, double b, double c) {
         this.a = a;
         this.b = b;
@@ -12,13 +24,15 @@ public class Triangle implements Shape{
     @Override
     public void area() {
         areaTriangle = (a*b)/2;
-        System.out.println("Area Triangle :"+areaTriangle);
+
     }
 
     @Override
     public void perimeter() {
         perimeterTriangle = a+b+c;
-        System.out.println("Perimeter Triangle"+perimeterTriangle);
 
+    }
+    public double compareTo(Shape s) {
+        return getArea() - s.getArea();
     }
 }
